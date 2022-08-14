@@ -1,0 +1,261 @@
+.modal-mask {
+  // position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  max-width: 800px;
+  height: 630px;
+  margin: 0px auto;
+  padding: 30px 40px 30px 30px;
+  background-color: $dark-blue;
+  background: #181A20;
+  border: 1px solid $dark-grey;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    &_title {
+      color: $white;
+      font-weight: 500;
+      font-size: 24px;
+    }
+    &_btn {
+      font-size: 20px;
+      background: transparent;
+      color: $white;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-body {
+  // search
+  &__search {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 21px;
+    .l-search {
+      font-size: 14px;
+      font-weight: 300;
+      color: $dark-grey;
+      margin-bottom: 6px;
+    }
+    .i-search {
+      width: 100%;
+      height: 30px;
+      background: $dark-blue;
+      border: 1px solid $dark-grey;
+      border-radius: 10px;
+      outline: none;
+      padding: 0 10px;
+      color: $white;
+    }
+  }
+  // list and camera
+  &__list-camera {
+    display: flex;
+    justify-content: space-between;
+    .lists {
+      width: 382px;
+      height: 363px;
+      border: 1px solid $dark-grey;
+      border-radius: 5px;
+      padding: 13px 0 0 18px;
+      overflow-y: scroll;
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 18px;
+        &_block {
+          display: flex;
+          margin-bottom: 16px;
+          cursor: pointer;
+          .sorts {
+            .sort-up {
+              width: 0;
+              height: 0;
+              border-left: 4px solid transparent;
+              border-right: 4px solid transparent;
+              border-bottom: 8px solid $dark-grey;
+              margin-bottom: 2px;
+            }
+            .sort-down {
+              width: 0;
+              height: 0;
+              border-left: 4px solid transparent;
+              border-right: 4px solid transparent;
+              border-top: 8px solid $dark-grey;
+            }
+          }
+          .name {
+            font-weight: 500;
+            font-size: 15px;
+            color: $grey;
+            margin-left: 10px;
+          }
+        }
+      }
+      &__body {
+        .folders {
+          &__item {
+            .folder {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 5px;
+              cursor: pointer;
+              .icon {
+                display: flex;
+                align-items: center;
+                .fa-sort-down {
+                  cursor: pointer;
+                  margin-right: 14px;
+                  color: $dark-grey;
+                  margin-top: -6px;
+                }
+                img {
+                  width: 12px;
+                  height: 12px;
+                }
+                .folder-name {
+                  width: 231px;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  color: $white;
+                  font-size: 12px;
+                  font-weight: 400;
+                  margin-left: 5px;
+                }
+                .active {
+                  color: $firm;
+                  fill: $firm;
+                }
+              }
+              // checbkox
+              .checkbox {
+                margin-right: 15px;
+                input {
+                  display: none;
+                }
+                label {
+                  position: relative;
+                }
+                label::after {
+                  display: block;
+                  content: "";
+                  width: 12px;
+                  height: 12px;
+                  border: 1px solid $dark-grey;
+                }
+                input:checked + label::before {
+                  position: absolute;
+                  top: -3px;
+                  left: 1px;
+                  display: block;
+                  content: url("@/assets/img/Checkbox.svg");
+                  width: 12px;
+                  height: 12px;
+                }
+              }
+            }
+            .next_f {
+              margin-top: 10px;
+              &__item {
+                .folder {
+                  .icon {
+                    margin-left: 40px;
+                  }
+                  .numb-check {
+                    display: flex;
+                    .number {
+                      margin-right: 18px;
+                      display: block;
+                      font-weight: 300;
+                      font-size: 12px;
+                      color: $dark-grey;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .camera-block {
+      .camera {
+        width: 312px;
+        height: 179px;
+        margin-bottom: 13px;
+        img {
+          width: 100%;
+        }
+      }
+      .description {
+        &__list {
+          display: flex;
+          &_item {
+            margin-bottom: 11px;
+            .text {
+              font-size: 12px;
+              font-weight: 300;
+              color: $grey;
+            }
+          }
+          .left {
+            width: 80px;
+            .text {
+              color: $dark-grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 20px;
+    width: 225px;
+    border: 1px solid $firm;
+    border-radius: 100px;
+    background: transparent;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    color: $firm;
+  }
+}

@@ -1,0 +1,40 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+// colors
+$white: #ffffff;
+$dark-grey: #686A70;
+$dark-blue: #181A20;
+$grey: #C0C0C0;
+$firm: #3FD5B8;
+
+// spesification
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+// scroll
+.scroll {
+  &::-webkit-scrollbar-track {
+    background-color: $dark-grey;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $firm;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+@import "_popup";
